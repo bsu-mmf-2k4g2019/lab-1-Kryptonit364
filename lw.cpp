@@ -13,21 +13,30 @@ Button *LW::createButton(const QString &text, const char *member)
 LW::LW(QWidget *parent)
     : QWidget(parent)
 {
-    /*display = new QLineEdit("0");
-    display->setReadOnly(true);
-    display->setAlignment(Qt::AlignRight);
-    display->setMaxLength(15);
-    QFont font = display->font();
-    font.setPointSize(font.pointSize() + 8);
-    display->setFont(font);*/
-
+    stdts = new QComboBox();
+    inp = new QLineEdit("Новый студент...");
     //Button *pointButton = createButton(tr("."), SLOT(pointClicked()));
+    add = createButton("Добавить", SLOT(addStdt()));
+    del = createButton("Удалить", SLOT(delStdt()));
 
     QGridLayout *mainLayout = new QGridLayout;
     mainLayout->setSizeConstraint(QLayout::SetFixedSize);
     //mainLayout->addWidget(display, 0, 0, 1, 6);
-    //some widjets
+    mainLayout->addWidget(inp, 0, 0, 1, 6);
+    mainLayout->addWidget(add, 1, 1);
+    mainLayout->addWidget(del, 1, 4);
+    mainLayout->addWidget(stdts, 2, 0, 1, 6);
 
     setLayout(mainLayout);
-    setWindowTitle(tr("Calculator"));
+    setWindowTitle("Marks");
+}
+
+void LW::addStdt(){
+    if (inp->displayText() != "")
+        stdts->addItem(inp->displayText());
+}
+
+void LW::delStdt(){
+    if (stdts->count() != 0)
+        stdts->removeItem(stdts->count() - 1);
 }

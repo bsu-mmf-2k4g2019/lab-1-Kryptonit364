@@ -25,8 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        main.cpp \
-        main.cpp \
+    main.cpp \
     button.cpp \
     lw.cpp
 
