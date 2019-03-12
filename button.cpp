@@ -1,23 +1,17 @@
 #include <QtWidgets>
-
 #include "button.h"
 
-//! [0]
 Button::Button(const QString &text, QWidget *parent)
     : QToolButton(parent)
 {
-    setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
     setText(text);
 }
-//! [0]
-
-//! [1]
-QSize Button::sizeHint() const
+/*QSize Button::sizeHint() const
 //! [1] //! [2]
 {
     QSize size = QToolButton::sizeHint();
     size.rheight() += 20;
     size.rwidth() = qMax(size.width(), size.height());
     return size;
-}
-//! [2]
+}*/

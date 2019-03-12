@@ -18,14 +18,16 @@ LW::LW(QWidget *parent)
     //Button *pointButton = createButton(tr("."), SLOT(pointClicked()));
     add = createButton("Добавить", SLOT(addStdt()));
     del = createButton("Удалить", SLOT(delStdt()));
-
+    QLabel *eNameField = new QLabel("Контроль студентов");
+    QLabel *eMarksField = new QLabel("Ввод оценок");
     QGridLayout *mainLayout = new QGridLayout;
     mainLayout->setSizeConstraint(QLayout::SetFixedSize);
-    //mainLayout->addWidget(display, 0, 0, 1, 6);
-    mainLayout->addWidget(inp, 0, 0, 1, 6);
-    mainLayout->addWidget(add, 1, 1);
-    mainLayout->addWidget(del, 1, 4);
-    mainLayout->addWidget(stdts, 2, 0, 1, 6);
+    mainLayout->addWidget(eNameField, 0, 0, 1, 6);
+    mainLayout->addWidget(inp, 1, 0, 1, 6);
+    mainLayout->addWidget(add, 2, 0, 1, 3);
+    mainLayout->addWidget(del, 2, 3, 1, 3);
+    mainLayout->addWidget(stdts, 3, 0, 1, 6);
+    mainLayout->addWidget(eMarksField, 4, 0, 1, 6);
 
     setLayout(mainLayout);
     setWindowTitle("Marks");
@@ -40,3 +42,4 @@ void LW::delStdt(){
     if (stdts->count() != 0)
         stdts->removeItem(stdts->count() - 1);
 }
+
