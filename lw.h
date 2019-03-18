@@ -21,23 +21,30 @@ public:
     LW(QWidget *parent = 0);
     ~LW() = default;
 private slots:
+    void clrFIO();
     void addStdt();
-    void delStdt();
+    void delFStdt();
+    void delCStdt();
     void submitMarks();
     void refreshOutput();
     void clrData();
     void resetInpMarks();
+    void countSB();
 private:
     Marks *root;
     Button *createButton(const QString &text, const char *member);
-    QComboBox *stdts;
     QLineEdit *inp;
+    Button *clrInp;
+    QComboBox *stdts;
     QSpinBox **inpMarks;
     Button *add;
-    Button *del;
+    Button *delF;
+    Button *delC;
     Button *submit;
     Button *reset;
     QLineEdit *out;
+    Button *findSB;
     Button *clr;
+    Button *outSB;
 };
 #endif // LW_H
