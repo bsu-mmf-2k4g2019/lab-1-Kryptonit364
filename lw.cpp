@@ -56,7 +56,6 @@ LW::LW(QWidget *parent) : QWidget(parent){
     mainLayout->addWidget(clr, 9, 2*N, 1, 2*N);
     setLayout(mainLayout);
     setWindowTitle("Marks");
-    setWindowIcon(QIcon(":icon.png"));
 }
 
 void LW::clrFIO(){

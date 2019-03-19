@@ -14,8 +14,7 @@ HEADERS += \
     button.h \
     lw.h
 
-RESOURCES += \
-    resources.qrc
+RC_ICONS += icon.ico
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
