@@ -205,7 +205,7 @@ void LW::countSB(){
     for(int i = 0; i < stdts->currentIndex(); i++){
         t = t->next;
     }
-    int rez;
+    int rez = 0;
     for (int i = 0; i < N; i++){
         rez += t->m[i];
     }
